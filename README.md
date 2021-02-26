@@ -54,3 +54,19 @@ int main()
 	else printf("F\n");
 }
 ```
+5
+```C
+#include <stdio.h>
+int main()
+{
+	int n,m,temp;
+	scanf("%d%d",&n,&m);
+	if(m>n) temp=n;
+	else temp=m;
+	int ans;
+	for(int i=1;i<=temp;i++){
+		if(n%i==0&&m%i==0) ans=i;
+	}
+	printf("%d %d\n",n/ans,m/ans);
+}
+```
