@@ -212,3 +212,38 @@ int main()
 	}
 }
 ```
+```C
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+char line[1000];
+char tree[1000000][32];
+int compare(const void*p1,const void*p2){
+	return strcmp ((char*)p1,(char*)p2);
+}
+int main()
+{
+	int t;
+	scanf("%d\n\n",&t);
+	
+	for(int i=0;i<t;i++){
+		int n=0;
+		while(gets(line)!=NULL){
+			if(strcmp(line,"")==0)break;
+			
+			strcpy(tree[n],line);
+			//printf("%s\n",line);
+			n++;
+		}
+		printf("有幾棵樹?%d\n",n);
+		
+		qsort(tree,n,32,compare);
+		
+		for(int i=0;i<n;i++){
+			printf("%s\n",tree[i]);
+		}
+		
+		printf("===============\n");
+	}
+}
+```
